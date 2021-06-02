@@ -9,5 +9,6 @@ and embedded in the CISL Resource Status page, https://www2.cisl.ucar.edu/user-s
 
 
 # Example output html table
-![alt text](https://github.com/NCAR/casper_resource_status/blob/master/ExampleScreenShot.png "Example table")
+![alt text](https://github.com/mickcoady/casper_resource_status/blob/main/ExampleScreenShot.png "Example table")
+
 
