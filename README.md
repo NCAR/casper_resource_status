@@ -6,3 +6,7 @@ On GLADE, the script's source is in the file /glade/u/home/csgteam/scripts/queue
 
 The output html table is written to /glade/u/home/csgteam/scripts/queue_status_dav/nodes_table.html
 and embedded in the CISL Resource Status page, https://www2.cisl.ucar.edu/user-support/cisl-resource-status
+
+
+# Example output html table
+![alt text](https://github.com/NCAR/casper_resource_status/blob/master/casper_resource_status_table.PNG "Example table")
