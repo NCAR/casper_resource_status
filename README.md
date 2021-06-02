@@ -23,13 +23,13 @@ against the PBS database. This also turns on test mode.
 
 # Output files
 In addition to "queues_table_ch.html" 4 other files are re-generated on each execution.        
-   File Name __________ Command used to generate      
-   qstat.out            /glade/u/apps/ch/opt/usr/bin/qstat \@casper | grep -vi "job id" | grep ".casper-pbs" > qstat.out
-   qstat-wn.out         /glade/u/apps/ch/opt/usr/bin/qstat -w -n \@casper | grep " R "> qstat-wn.out
-   nodestate.out        /opt/pbs/bin/pbsnodes -a | grep "state = " | grep -v comment | grep -v last_state_change_time | sort | uniq -c > nodestate.out
-   pbsnodes-a.out       /opt/pbs/bin/pbsnodes -a > pbsnodes-a.out
-   pbsnodes-aSj.out     /opt/pbs/bin/pbsnodes -aSj -D "," > pbsnodes-aSj.out
-   pbsnodes-l.out       /opt/pbs/bin/pbsnodes -l > pbsnodes-l.out
+   File Name __________  Command used to generate      
+   qstat.out __________  /glade/u/apps/ch/opt/usr/bin/qstat \@casper | grep -vi "job id" | grep ".casper-pbs" > qstat.out
+   qstat-wn.out _______  /glade/u/apps/ch/opt/usr/bin/qstat -w -n \@casper | grep " R "> qstat-wn.out
+   nodestate.out ______  /opt/pbs/bin/pbsnodes -a | grep "state = " | grep -v comment | grep -v last_state_change_time | sort | uniq -c > nodestate.out
+   pbsnodes-a.out ______ /opt/pbs/bin/pbsnodes -a > pbsnodes-a.out
+   pbsnodes-aSj.out ____ /opt/pbs/bin/pbsnodes -aSj -D "," > pbsnodes-aSj.out
+   pbsnodes-l.out ______ /opt/pbs/bin/pbsnodes -l > pbsnodes-l.out
    pbs_reservations.out /opt/pbs/bin/pbs_rstat | grep '[RS][0-9][0-9]' | grep " RN " | awk '{print \$2}' > pbs_reservations.out
    show_status.out      text file that mirrors queues_table_ch.html           
    
