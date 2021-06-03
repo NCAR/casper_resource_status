@@ -22,21 +22,9 @@ makes use of existing output *.out files (see bbelow) to reduce queries
 against the PBS database. This also turns on test mode.
 
 # Output files
-In addition to "queues_table_ch.html" 8 temporary output files are re-generated in each execution.        
-   File Name __________ Command used to generate      
-   qstat.out: /glade/u/apps/ch/opt/usr/bin/qstat \@casper | grep -vi "job id" | grep ".casper-pbs" > qstat.out
-   qstat-wn.out: /glade/u/apps/ch/opt/usr/bin/qstat -w -n \@casper | grep " R "> qstat-wn.out
-   nodestate.out ______ /opt/pbs/bin/pbsnodes -a | grep "state = " | grep -v comment | grep -v last_state_change_time | sort | uniq -c > nodestate.out
-   pbsnodes-a.out ______ /opt/pbs/bin/pbsnodes -a > pbsnodes-a.out
-   pbsnodes-aSj.out ____ /opt/pbs/bin/pbsnodes -aSj -D "," > pbsnodes-aSj.out
-   pbsnodes-l.out ______ /opt/pbs/bin/pbsnodes -l > pbsnodes-l.out
-   
-   pbs_reservations.out____/opt/pbs/bin/pbs_rstat | grep '[RS][0-9][0-9]' | grep " RN " | awk '{print \$2}' > pbs_reservations.out
-   
-   show_status.out      text file that mirrors queues_table_ch.html           
-   
-   *CSG provides users with a script, showstatus, that echos "show_status.out" for access to the same information. 
-   
+In addition to "queues_table_ch.html" 8 temporary output files are re-generated in each execution.
+![alt text](https://github.com/mickcoady/casper_resource_status/blob/main/queue_status_dav_files.png "output files")
+
 
 # Example output html table
 ![alt text](https://github.com/mickcoady/casper_resource_status/blob/main/ExampleScreenShot.png "Example table")
