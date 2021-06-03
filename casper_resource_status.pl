@@ -453,8 +453,12 @@ if ($@ | ($nodestate_out_len == 0) | ($qstat_out_len == 0)) {
 		
 	};
 	
-	printf STATUSFILE "Node Activity: \n"; 
-	printf STATUSFILE "           Free %5d \n", $nNodes_Free;
+	printf STATUSFILE "Node Activity: \n";  
+	printf STATUSFILE " All 36 CPUs in Use %5d \n", $nNodes_100Used;
+	printf STATUSFILE "   1-35 CPUs in Use %5d \n", $nNodes_PartialUsed;
+	printf STATUSFILE "      0 CPUs in Use %5d \n", $nNodes_Free;
+	printf STATUSFILE "  Reserved / In Use %5d /%2d \n", $nNodes_reserved, $nResNodes_jobs;
+	printf STATUSFILE "       Down/Offline %5d \n\n", $nNodes_offline;    
 
 	
 	my $Total_Node_Count = $nNodes_Free + $nNodes_PartialUsed + $nNodes_100Used + $nNodes_offline + $nNodes_reserved;
@@ -507,7 +511,6 @@ if ($@ | ($nodestate_out_len == 0) | ($qstat_out_len == 0)) {
 			<td colspan="3"; style='border-bottom:none;border-top:none'; bgcolor="#D3D3D3">  </td>
 		 </tr>
 	};
-	printf STATUSFILE "   Down/Offline %5d \n\n", $nNodes_offline;
 
 
 	my $datestamp=`date "+%l:%M %P %Z %a %b %e %Y"`;   # used for display in HTML table
